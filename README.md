@@ -1,6 +1,7 @@
 # AI-Safety-2 – Boundary Erosion Demo
 
 A SafeLab prototype demonstrating how conversational AI systems can be manipulated through **incremental context shifts** that erode guardrails and cross behavioral boundaries.
+<img width="1082" alt="Screenshot 2025-04-25 at 1 41 12 PM" src="https://github.com/user-attachments/assets/07446380-fa77-49a4-a9fc-3b0b4fd59c5c" />
 
 ## 🧠 Overview
 
