@@ -23,3 +23,49 @@
      "next-themes": "^0.4.4",
      "react": "^19",
      "react-day-picker": "8.10.1",
+--- a/app/page.tsx
++++ b/app/page.tsx
+@@ -1,6 +1,6 @@
+ "use client"
+ 
+-import { useState } from "react"
++import { useRef, useState } from "react"
+ import ChatInterface from "@/components/chat-interface"
+ import ContextVisualization from "@/components/context-visualization"
+ import BoundaryMeter from "@/components/boundary-meter"
+@@ -14,7 +14,10 @@
+   const [selectedScenario, setSelectedScenario] = useState(predefinedScenarios[0])
+   const [showBoundaryBreachAlert, setShowBoundaryBreachAlert] = useState(false)
+ 
++  const contextGeneration = useRef(0)
++
+   const handleSendMessage = (message: string) => {
++    const generation = contextGeneration.current
+     // Add user message
+     const newMessages = [...messages, { role: "user", content: message }]
+     setMessages(newMessages)
+@@ -35,18 +38,23 @@
+     // Check if boundary breach occurred
+     if (newBoundaryLevel >= 100 && !showBoundaryBreachAlert) {
+       setShowBoundaryBreachAlert(true)
+-      setTimeout(() => setShowBoundaryBreachAlert(false), 3000)
++      setTimeout(() => {
++        if (generation === contextGeneration.current) setShowBoundaryBreachAlert(false)
++      }, 3000)
+     }
+ 
+     // Generate AI response based on current scenario and boundary level
+     const responseIndex = Math.min(Math.floor(newBoundaryLevel / 20), selectedScenario.responses.length - 1)
+ 
+     setTimeout(() => {
++      if (generation !== contextGeneration.current) return
+       setMessages((prev) => [...prev, { role: "assistant", content: selectedScenario.responses[responseIndex] }])
+     }, 500)
+   }
+ 
+   const resetContext = () => {
++    contextGeneration.current += 1
++    setShowBoundaryBreachAlert(false)
+     setMessages([])
+     setBoundaryLevel(0)
+     setContextState("safe")
