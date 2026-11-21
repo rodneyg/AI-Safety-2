@@ -1,0 +1,25 @@
+--- a/app/layout.tsx
++++ b/app/layout.tsx
+@@ -2,9 +2,8 @@
+ import './globals.css'
+ 
+ export const metadata: Metadata = {
+-  title: 'v0 App',
+-  description: 'Created with v0',
+-  generator: 'v0.dev',
++  title: 'Boundary Erosion | SafeLab',
++  description: 'Watch the boundary meter change as a simulated AI conversation shifts, then reset the context and try again.',
+ }
+ 
+ export default function RootLayout({
+--- a/package.json
++++ b/package.json
+@@ -45,7 +45,7 @@
+     "embla-carousel-react": "8.5.1",
+     "input-otp": "1.4.1",
+     "lucide-react": "^0.454.0",
+-    "next": "15.2.8",
++    "next": "15.5.29",
+     "next-themes": "^0.4.4",
+     "react": "^19",
+     "react-day-picker": "8.10.1",
