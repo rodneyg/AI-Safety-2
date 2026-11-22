@@ -1,0 +1,9 @@
+diff --git a/components/chat-interface.tsx b/components/chat-interface.tsx
+index db8ce1e..ec973f7 100644
+--- a/components/chat-interface.tsx
++++ b/components/chat-interface.tsx
+@@ -46,3 +46,3 @@ export default function ChatInterface({ messages, onSendMessage }: ChatInterface
+                 <div
+-                  className={`max-w-[80%] p-3 rounded-lg ${
++                  className={`max-w-[80%] break-words p-3 rounded-lg ${
+                     message.role === "user"
