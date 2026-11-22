@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-22
+
+### Fixed
+
+- Long strings without spaces now wrap inside chat bubbles, so messages stay readable on small screens. [PR #5](https://github.com/rodneyg/AI-Safety-2/pull/5)
+
 ## 2026-11-21
 
 ### Fixed
