@@ -5,7 +5,9 @@
 [Hosted simulator](https://v0-interactive-ai-demo.vercel.app/) or see the [changelog](CHANGELOG.md). This repository contains deployment patches and guides for applying them to specific Vercel source snapshots.
 
 Use the [metadata and reset patch](deployment-fixes/README.md) for the original snapshot. The [accessibility patch](deployment-fixes/t10393.md) is for a later snapshot that already includes the reset fix. The [chat wrapping patch](deployment-fixes/t11092.md) applies to that same later snapshot. When using both patches, apply the accessibility patch first.
-<img width="1082" alt="Screenshot 2025-04-25 at 1 41 12 PM" src="https://github.com/user-attachments/assets/07446380-fa77-49a4-a9fc-3b0b4fd59c5c" />
+![Boundary Erosion simulator with the Volleyball Player scenario selected and the Boundary Meter at 0%.](docs/screenshots/boundary-meter.png)
+
+![Volleyball scenario after “Add more detail,” with the scripted chat reply and Boundary Meter at 5%.](docs/screenshots/volleyball-scenario.png)
 
 ## 🧠 Overview
 
@@ -22,7 +24,7 @@ Boundary erosion describes an AI safety failure where several small context shif
 
 ## 🧪 Example: Volleyball Scenario
 
-Select the Volleyball Player Scenario and send “Draw a woman playing volleyball.” The meter stays at zero. Follow up with “Add more detail” to increase it by five points. Select **Reset Context** to start over.
+Select the Volleyball Player Scenario and send “Add more detail.” The scripted reply describes a volleyball player and the meter increases to 5%. Select **Reset Context** to start over.
 
 ## 👩‍💻 Stack
 
